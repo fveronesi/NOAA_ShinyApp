@@ -16,7 +16,7 @@ shinyServer(function(input, output, session) {
   StationID <- stringr::str_trim(StationID, "both")
   
   Range <- seq(Start, End)
-  FL <- list.files(path="NOAA Data", pattern=paste0(StationID,"-99999-",Range, collapse="|"), full.names=T)
+  FL <- list.files(path="NOAA Data/", pattern=paste0(StationID,"-99999-",Range, collapse="|"), full.names=T)
   
   if(length(FL)==0){
   showNotification("These years were not recorded for this station", type="error", duration=15)
